@@ -1,8 +1,8 @@
  /* --------------------------------------------------
   * © Copyright 2018 - Profession by Designesia
   * --------------------------------------------------*/
-(function($) {
-	'use strict';
+ (function($) {
+     'use strict';
 
      /* --------------------------------------------------
       * template options (customable)
@@ -46,17 +46,17 @@
          jQuery("header").addClass("clone", 1000, "easeOutBounce");
          var $document = $(document);
          var vscroll = 0;
-		 var header = jQuery("header.autoshow");
-			 if ($document.scrollTop() >= 50 && vscroll == 0) {
-				 header.removeClass("scrollOff");
-				 header.addClass("scrollOn");
-				 header.css("height", "auto");
-				 vscroll = 1;
-			 } else {
-				 header.removeClass("scrollOn");
-				 header.addClass("scrollOff");
-				 vscroll = 0;
-			 }
+         var header = jQuery("header.autoshow");
+         if ($document.scrollTop() >= 50 && vscroll == 0) {
+             header.removeClass("scrollOff");
+             header.addClass("scrollOn");
+             header.css("height", "auto");
+             vscroll = 1;
+         } else {
+             header.removeClass("scrollOn");
+             header.addClass("scrollOff");
+             vscroll = 0;
+         }
      }
      /* --------------------------------------------------
       * plugin | magnificPopup
@@ -184,7 +184,7 @@
          $('.images-popup').magnificPopup({
              delegate: 'a', // child items selector, by clicking on it popup will open
              type: 'image'
-             // other options
+                 // other options
          });
      }
      /* --------------------------------------------------
@@ -203,7 +203,7 @@
          enquire.register("screen and (max-width: 993px)", {
              match: function() {
                  $('header').addClass("header-mobile");
-				 var body = jQuery('body');
+                 var body = jQuery('body');
                  if (body.hasClass('side-content')) {
                      body.removeClass('side-layout');
                  }
@@ -211,7 +211,7 @@
              unmatch: function() {
                  $('header').removeClass("header-mobile");
                  jQuery('header').css("height", tmp_h);
-				 var body = jQuery('body');
+                 var body = jQuery('body');
                  if (body.hasClass('side-content')) {
                      body.addClass('side-layout');
                  }
@@ -220,15 +220,15 @@
          init();
          init_de();
          video_autosize();
-		 
-		 var header = $('header');
+
+         var header = $('header');
          header.removeClass('smaller');
          header.removeClass('logo-smaller');
          header.removeClass('clone');
 
          var mx = window.matchMedia("(max-width: 992px)");
-		 var osw = jQuery('.owl-slide-wrapper');
-         if (mx.matches) {			 
+         var osw = jQuery('.owl-slide-wrapper');
+         if (mx.matches) {
              osw.find("img").css("height", $(window).innerHeight());
              osw.find("img").css("width", "auto");
          } else {
@@ -282,12 +282,12 @@
              navigation: false,
              pagination: true
          });
-		 jQuery("#carousel-2").owlCarousel({
+         jQuery("#carousel-2").owlCarousel({
              items: 2,
              navigation: false,
              pagination: true
          });
-		 jQuery("#carousel-4").owlCarousel({
+         jQuery("#carousel-4").owlCarousel({
              items: 4,
              navigation: false,
              pagination: false
@@ -703,7 +703,7 @@
                  var h = parseInt(jQuery(this).parent().find(".center-xy").css("height"), 10);
                  var pic_w = jQuery(this).css("width");
                  var pic_h = jQuery(this).css("height");
-				 var tp = jQuery(this).parent();
+                 var tp = jQuery(this).parent();
                  tp.find(".center-xy").css("left", parseInt(pic_w, 10) / 2 - w / 2);
                  tp.find(".center-xy").css("top", parseInt(pic_h, 10) / 2 - h / 2);
                  tp.find(".bg-overlay").css("width", pic_w);
@@ -930,27 +930,27 @@
              });
          });
          jQuery(".de-team-list").on("mouseenter", function() {
-             var h;
-             h = jQuery(this).find("img").css("height");
-             jQuery(this).find(".team-desc").stop(true).animate({
-                 'top': "0px"
-             }, 350, 'easeOutQuad');
-             jQuery(this).find("img").stop(true).animate({
-                 'margin-top': "-100px"
-             }, 400, 'easeOutQuad');
-         }).on("mouseleave", function() {
-             var h;
-             h = jQuery(this).find("img").css("height");
-             jQuery(this).find(".team-desc").stop(true).animate({
-                 'top': h
-             }, 350, 'easeOutQuad');
-             jQuery(this).find("img").stop(true).animate({
-                 'margin-top': "0px"
-             }, 400, 'easeOutQuad');
-         })
-         // portfolio
+                 var h;
+                 h = jQuery(this).find("img").css("height");
+                 jQuery(this).find(".team-desc").stop(true).animate({
+                     'top': "0px"
+                 }, 350, 'easeOutQuad');
+                 jQuery(this).find("img").stop(true).animate({
+                     'margin-top': "-100px"
+                 }, 400, 'easeOutQuad');
+             }).on("mouseleave", function() {
+                 var h;
+                 h = jQuery(this).find("img").css("height");
+                 jQuery(this).find(".team-desc").stop(true).animate({
+                     'top': h
+                 }, 350, 'easeOutQuad');
+                 jQuery(this).find("img").stop(true).animate({
+                     'margin-top': "0px"
+                 }, 400, 'easeOutQuad');
+             })
+             // portfolio
          jQuery('.item .picframe').each(function() {
-			 var img = jQuery(this).find("img");
+             var img = jQuery(this).find("img");
              img.css("width", "100%");
              img.css("height", "auto");
              img.on('load', function() {
@@ -967,8 +967,8 @@
          // --------------------------------------------------
          jQuery('.overlay').fadeTo(1, 0);
          // gallery hover
-         jQuery(".item .picframe").on("mouseenter", function() {
-			 var ov = jQuery(this).parent().find(".overlay");
+         jQuery(".item .picframe a").on("mouseenter", function() {
+             var ov = jQuery(this).parent().find(".overlay");
              ov.width(jQuery(this).find("img").css("width"));
              ov.height(jQuery(this).find("img").css("height"));
              ov.stop(true).fadeTo(200, 1);
@@ -1055,7 +1055,7 @@
          center_xy();
          init_de();
          init_resize();
-         de_progress();		 		 
+         de_progress();
          new WOW().init();
          // --------------------------------------------------
          // custom positiion
@@ -1075,18 +1075,18 @@
          // blog list hover
          // --------------------------------------------------
          jQuery(".blog-list").on("mouseenter", function() {
-             var v_height = jQuery(this).find(".blog-slide").css("height");
-             var v_width = jQuery(this).find(".blog-slide").css("width");
-             var newheight = (v_height.substring(0, v_height.length - 2) / 2) - 40;
-			 var owa = jQuery(this).find(".owl-arrow");
-             owa.css("margin-top", newheight);
-             owa.css("width", v_width);
-             owa.fadeTo(150, 1);
-             //alert(v_height);
-         }).on("mouseleave", function() {
-             jQuery(this).find(".owl-arrow").fadeTo(150, 0);
-         })
-         //  logo carousel hover
+                 var v_height = jQuery(this).find(".blog-slide").css("height");
+                 var v_width = jQuery(this).find(".blog-slide").css("width");
+                 var newheight = (v_height.substring(0, v_height.length - 2) / 2) - 40;
+                 var owa = jQuery(this).find(".owl-arrow");
+                 owa.css("margin-top", newheight);
+                 owa.css("width", v_width);
+                 owa.fadeTo(150, 1);
+                 //alert(v_height);
+             }).on("mouseleave", function() {
+                 jQuery(this).find(".owl-arrow").fadeTo(150, 0);
+             })
+             //  logo carousel hover
          jQuery("#logo-carousel img").on("mouseenter", function() {
              jQuery(this).fadeTo(150, .5);
          }).on("mouseleave", function() {
@@ -1106,10 +1106,10 @@
              var h = jQuery('#mainmenu').prop('scrollHeight') + 60;
 
              if (mobile_menu_show == 0) {
-                 jQuery('header.header-mobile').css("height","100%");
+                 jQuery('header.header-mobile').css("height", "100%");
                  mobile_menu_show = 1;
              } else {
-                 jQuery('header.header-mobile').css("height",header_height);
+                 jQuery('header.header-mobile').css("height", header_height);
                  mobile_menu_show = 0;
              }
          })
@@ -1209,7 +1209,7 @@
           * --------------------------------------------------*/
          $(window).resize(function() {
              init_resize();
-			 header_sticky();
+             header_sticky();
              centerY();
          });
          /* --------------------------------------------------
@@ -1269,10 +1269,10 @@
                  $('.bg-loop').css('background-position', x + 'px 0');
              }, 50);
          })
-		 
-		 $(window).load(function() {
-         filter_gallery();
-		 header_sticky();
+
+         $(window).load(function() {
+             filter_gallery();
+             header_sticky();
          });
      });
  })(jQuery);
